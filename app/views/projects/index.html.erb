@@ -1,0 +1,17 @@
+<h1>Projects</h1>
+<%= link_to "New project", new_project_path %>
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= project.name %>;
+      <%= link_to "Edit", edit_project_path(project) %>;
+      <%= project.description %>;
+      <%= project.start_date %> hasta 
+      <%= project.end_date %>
+      Tasks:
+      <% project.tasks.each do |task| %>
+          <%= task.title %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
